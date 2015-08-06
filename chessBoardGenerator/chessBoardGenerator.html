@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled</title>
+    <style>
+    span {
+        height: 100px;
+    }
+    </style>
+    <script>
+    function chessOnlyOneForloop(size) {
+        var cbsize = size * size;
+        var chessb = document.getElementById('chessboard');
+        chessb.innerHTML = " ";
+        for (var i = 0; i < cbsize; i++) {
+            if (i % size === 0) {
+                chessb.innerHTML += "<br/>";
+            }
+            chessb.innerHTML += (i % 2 ? "<span style='background-color:red'>...</span>" : "<span style='background-color:blue'>...</span>");
+        }
+        chessb.innerHTML += "<br/>";
+    }
+    </script>
+    <script>
+    function clearBoard() {
+        var chess = document.getElementById('chessboard');
+        chess.innerHTML = " ";
+    }
+
+    function create() {
+
+        clearBoard();
+
+        var row = parseInt(document.getElementById('row').value);
+        var cols = parseInt(document.getElementById('column').value);
+        var chess = document.getElementById('chessboard');
+        for (var i = 0; i < row; i++) {
+            for (var j = 0; j < row; j++) {
+
+                if ((i + j) % 2 == 0) {
+                    chess.innerHTML += "<span style='background-color:red'>...</span>";
+
+                } else {
+                    chess.innerHTML += "<span style='background-color:blue'>...</span>";
+
+                }
+            }
+            chess.innerHTML += "<br/>"
+        }
+        return chess;
+
+
+
+    };
+    </script>
+    <link rel="author" href="humans.txt">
+</head>
+
+<body>
+    <h1>Custom Chess board Maker</h1>
+    <input type="text" id="row" placeholder="enter  row">
+    <br>
+    <br>
+    <input type="text" id="column" placeholder="enter colms">
+    <br>
+    <br>
+    <button id="btn1">submit</button>
+    <br>
+    <br>
+    <button id="btn2">submit2</button>
+    <br>
+    <br>
+    <div id="chessboard"></div>
+    <script type="text/javascript">
+   
+
+
+    document.getElementById('btn1').addEventListener('click', function() {
+        chesscls(64)
+    });
+
+
+
+    //1.////////////////////////
+    function chesscls(size, callback) {
+        (function() {
+
+                document.getElementById('chessboard').innerHTML = " ";
+                var i = 0;
+                row = 0;
+                var size2 = size * size
+
+
+                while (i < size2) {
+                    if (i % size == 0) {
+                        document.getElementById('chessboard').innerHTML += "<br/>";
+                        row += 1;
+                    }
+                    if (row % 2 == 0) {
+                        document.getElementById('chessboard').innerHTML += (i % 2 == 0 ? "<span style='background-color:red'>...</span>" : "<span style='background-color:blue'>...</span>");
+
+                        i++;
+                    } else {
+                        document.getElementById('chessboard').innerHTML += (i % 2 == 0 ? "<span style='background-color:blue'>...</span>" : "<span style='background-color:red'>...</span>");
+
+                        i++;
+                    }
+
+                }
+            }
+
+        )()
+
+    };
+    </script>
+</body>
+
+</html>

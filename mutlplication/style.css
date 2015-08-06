@@ -1,0 +1,32 @@
+#inputValue{
+height:30px;
+margin-right:5px;
+}
+
+#generate{
+ border:none;
+ height:30px;
+ color:#ffffff;
+ background-color:#FFB547;
+
+}
+
+#outputArea
+{
+    margin-top:20px;
+    border:1px solid grey;
+    width:220px;
+   
+}
+td{
+    width:220px;
+    padding-left: 15px;
+}
+tr:nth-child(even) 
+{
+    background: #FFF
+}
+tr:nth-child(odd) 
+{
+    background: #CCC
+}
